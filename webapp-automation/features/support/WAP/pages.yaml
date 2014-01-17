@@ -1,0 +1,45 @@
+Login:
+  path: "login"
+
+Landing:
+  path: "landing"
+
+Encounters:
+  path: "encounters"
+
+Registration:
+  path: "register"
+
+Own Profile:
+  path: "myprofile"
+
+People Nearby:
+  path: "peopleFolder"
+
+Photo Rating:
+  path: "peopleFolder"
+  required parameters:
+      folder: 17
+
+Messages:
+  path: "peopleFolder"
+  required parameters:
+      folder: 0
+
+Matches:
+  path: "peopleFolder"
+  required parameters:
+      folder: 15
+
+Visitors:
+  path: "peopleFolder"
+  required parameters:
+      folder: 8
+
+Favourites:
+  path: "peopleFolder"
+  required parameters:
+      folder: 4
+
+Forgot Password:
+  path: "forgotPassword"

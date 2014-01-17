@@ -1,0 +1,13 @@
+<div id="scenario-{{ id }}" class="scenario">
+
+    {{> tags }}
+
+    <h3>{{keyword}}: <span class="name">{{name}}</span> <small class="steps-toggle" data-scenario-id="{{ id }}">{{^ hasFailures}}Show{{/ hasFailures}}{{# hasFailures}}Hide{{/ hasFailures}} Steps</small></h3>
+
+    <ul class="steps{{^ hasFailures }} hidden{{/ hasFailures }}">
+        {{#steps}}
+            {{>step}}
+        {{/steps}}
+    </ul>
+
+</div>

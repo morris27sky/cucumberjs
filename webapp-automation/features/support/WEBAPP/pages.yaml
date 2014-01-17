@@ -1,0 +1,44 @@
+Login:
+  hash: "login-page"
+
+Encounters:
+  hash: "encounters-page"
+
+Forgot Password:
+  hash: "forgot-password-page"
+
+Landing:
+  hash: "landing-page"
+
+Registration:
+  hash: "registration-page"
+
+Own Profile:
+  hash: "own-profile-page"
+
+People Nearby:
+  hash: "people-nearby-page"
+
+Photo Rating:
+  hash: "photo-rating-page"
+
+Messages:
+  hash: "messages-page"
+
+Matches:
+  hash: "matches-page"
+
+Visitors:
+  hash: "visitors-page"
+
+Favourites:
+  hash: "favourites-page"
+
+Settings:
+  hash: "settings-page"
+
+Spotlight Intro:
+  hash: "spotlight-intro-page"
+
+Add Photo:
+  hash: "add-photos-page"

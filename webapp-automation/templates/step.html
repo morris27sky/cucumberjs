@@ -1,0 +1,10 @@
+<li class="step step-{{ result.status }}">
+
+    <strong>{{ keyword }}</strong>{{ name }}{{# missingStepDefinition }} - <strong>No Step Definition</strong>{{/ missingStepDefinition }}
+
+    {{# result.error_message }}
+    <span class="error-toggle">Show error</span>
+    <p class="error-message">{{ . }}</p>
+    {{/ result.error_message }}
+
+</li>

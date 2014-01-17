@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Automation Results</title>
+
+    <style>
+
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            color: #333;
+            font-size: 90%;
+            line-height: 1.25em;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            margin: 0.25em 0 0.5em 0;
+            font-size: 1.25em;
+        }
+
+        h3 {
+            margin: 0.25em 0;
+            font-size: 1em;
+        }
+
+        p, li {
+            font-size: 0.9em;
+        }
+
+        ul {
+            margin: 0 0 1.5em 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        small {
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+
+        .name {
+            font-weight: normal;
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            min-height: 4em;
+            background-color: #efefef;
+            border-bottom: 1px solid #666;
+        }
+
+        #feature-menu-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 200px;
+        }
+
+        #feature-menu {
+            width: 100%;
+        }
+
+        .intro-message {
+            padding-left: 1em;
+            padding-right: 250px;
+            line-height: 1.5em;
+        }
+
+        .intro-message .totals {
+            font-size: 1em;
+        }
+
+        .feature {
+            border-bottom: 1px solid #ddd;
+            padding: 1em;
+        }
+
+        #header + .feature {
+            margin-top: 5em;
+        }
+
+        .totals {
+            color: green;
+        }
+        .totals.has-failed-steps {
+            color: red;
+        }
+
+        .scenario {
+            padding-left: 2em;
+        }
+
+        .step-passed::before {
+            content: "\2714";
+            margin-right: 5px;
+            color: green;
+        }
+
+        .step-failed::before {
+            content: "\2718";
+            margin-right: 5px;
+            color: red;
+        }
+
+        .step-skipped::before {
+            content: "\00B0";
+            margin-right: 9px;
+        }
+
+        .step-undefined::before {
+            content: "\0021";
+            font-weight: bold;
+            color: orangered;
+            margin-right: 9px;
+        }
+
+        .tags {
+            font-size: 0.8em;
+            margin-bottom: 0;
+        }
+
+        .tag {
+            font-weight: bold;
+            display: inline-block;
+            padding: 0.1em 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #4B7EFF;
+            color: white;
+        }
+
+        .error-message {
+            display: none;
+            font-family: monospace, sans-serif;
+            font-size: 1.1em;
+            max-width: 600px;
+            padding: 0.5em;
+            color: red;
+            background-color: #efefef;
+            margin: 0.5em 0 0 1.5em;
+        }
+
+        .has-error .error-message {
+            display: block;
+        }
+
+        .error-toggle,
+        .steps-toggle {
+            cursor: pointer;
+            color: #555;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 0.5em;
+            font-size: 0.8em;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="header">
+
+        <p class="intro-message">
+            Tests were run on <strong>{{ date }}</strong> at <strong>{{ time }}</strong> against <strong>{{ environment }}</strong> using <strong>{{ browser }}</strong>.
+            Total run time <strong>{{ duration }}</strong>.
+            {{> totals }}
+        </p>
+
+        <div id="feature-menu-container">
+
+            <strong>Go to Feature</strong>
+
+            <select id="feature-menu">
+                {{# features }}
+                <option value="{{ id }}">{{ name }} ({{ passedSteps }} / {{ totalSteps }})</option>
+                {{/ features }}
+            </select>
+
+        </div>
+
+    </div>
+
+    {{# features }}
+        {{> feature }}
+    {{/ features }}
+
+    <script>
+
+        (function () {
+
+            var slice = Array.prototype.slice;
+
+            var errorToggle = function (toggle) {
+                toggle.addEventListener('click', function () {
+
+                    var parent = this.parentNode;
+
+                    if (parent.classList.contains('has-error')) {
+                        parent.classList.remove('has-error');
+                        this.textContent = 'Show error';
+                    }
+                    else {
+                        parent.classList.add('has-error');
+                        this.textContent = 'Hide error';
+                    }
+
+                });
+            };
+
+            var stepsToggle = function (toggle) {
+                toggle.addEventListener('click', function () {
+
+                    var id = 'scenario-' + toggle.getAttribute('data-scenario-id');
+                    var steps = document.getElementById(id).getElementsByClassName('steps')[0];
+
+                    if (steps.classList.contains('hidden')) {
+                        steps.classList.remove('hidden');
+                        toggle.textContent = 'Hide Steps';
+                    }
+                    else {
+                        steps.classList.add('hidden');
+                        toggle.textContent = 'Show Steps';
+                    }
+
+                });
+            };
+
+            var backToTop = function (anchor) {
+                anchor.addEventListener('click', function () {
+                    window.scrollTo(0,0);
+                }, false);
+            };
+
+            slice.call(document.getElementsByClassName('error-toggle')).forEach(errorToggle);
+            slice.call(document.getElementsByClassName('back-to-top')).forEach(backToTop);
+            slice.call(document.getElementsByClassName('steps-toggle')).forEach(stepsToggle);
+
+            document.getElementById('feature-menu').addEventListener('change', function () {
+                var feature = document.getElementById(this.value);
+                window.scrollTo(0, feature.offsetTop - document.getElementById('header').clientHeight);
+            }, false);
+
+        })();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+#----------Login page elements--------------#
+Username:
+  name: "un"
+
+Password:
+  name: "pw"
+
+Sign In Submit:
+  name: "login"
+
+#----------Registration page elements--------------#
+Lets go!:
+  css: "#registerSubmit"
+
+Email:
+  name: "email"
+
+Name:
+  css: ".text"
+
+Birthday:
+  name: "birthday"
+
+Gender male:
+  css: "#gender-male"
+
+Gender female:
+  css: "#gender-female"
+
+Im here to:
+  name: "tiw-phrase-id"
+
+City:
+  name: "city-search"
+
+Interested in element:
+  css: "#interested-in-wrap"
+
+#----------Notification elements--------------#
+Continue:
+  css: ".page-notify .button-primary"
+
+#----------forgoet password elements--------------#
+User:
+  css: ".form input.text"
+
+Get password:
+  css: ".button-primary"
+
+Cancel:
+  css: ".button-cancel"
+
+Unrecognized details error:
+  text: "Sorry, your contact details have not been recognized"
+
+WAP Error message container:
+  css: ".error"
+#----------menu item elements--------------#
+
+Menu:
+  css: ".title .link img[alt=home]"
+
+Profile menu item:
+  css: "a[href=myprofile]"
+
+People Nearby menu item:
+  css: "a[href=peopleFolder]"
+
+Encounters menu item:
+  css: "a[href=encounters]"
+
+Photo Rating menu item:
+  css: "a[href='peopleFolder?folder=17']"
+
+Your Connection:
+  css: ".home-separator"
+
+Messages menu item:
+  css: "a[href='peopleFolder?folder=0']"
+
+Matches menu item:
+  css: "a[href='peopleFolder?folder=15']"
+
+Profile visitors menu item:
+  css: "a[href='peopleFolder?folder=8']"
+
+Favourites menu item:
+  css: "a[href='peopleFolder?folder=4']"
+
+###Validation error messages###
+
+Empty name error:
+  text: "Enter your name"
+Empty gender error:
+  text: "Select your gender"
+Empty date of birth error:
+  text: "Select your date of birth"
+Empty city error:
+  text: "Please confirm your city"
+What you are here for error:
+  text: "Please select what you're here for"
+Name too short error:
+  text: "Name too short"
+Invalid name field error:
+  text: "Name field cannot contain numbers or symbols"
+Email in system error:
+  text: "Email already in system. Sign in instead"
+13 years age restriction error:
+  text: "You must be at least 13 years old"
+18 years age restriction error:
+  text: "You must be at least 18 years old to use this service."
+Invalid cell phone error:
+  text: "Please enter a valid cell phone number."
+

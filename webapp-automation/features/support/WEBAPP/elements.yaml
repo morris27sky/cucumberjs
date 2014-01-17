@@ -1,0 +1,205 @@
+#----------splashscreen elements--------------#
+Splashscreen:
+  css: '#splashscreen'
+
+#---------Landing page elements--------------#
+Sign In:
+  text: "Sign in with Badoo"
+
+Create Account:
+  text: "Create account"
+
+#----------Login page elements--------------#
+Username:
+  name: "username"
+
+Password:
+  name: "password"
+
+Sign In Submit:
+  css: "#login-button"
+
+Forgot Password Link:
+  text: "Forgot password?"
+
+### Validation error messages###
+Empty email or phone number error:
+  text: "Enter your email address or phone number"
+
+Empty password error:
+  text: "Enter your password"
+
+Invalid details error:
+  text: "Sorry, your details have not been recognized"
+
+#----------Registration page elements--------------#
+Lets go!:
+  css: "#register-button"
+
+Email:
+  name: "email"
+
+Name:
+  css: "#name"
+
+Birthday:
+  name: "birthday"
+
+Gender male:
+  css: "#gender-male"
+
+Gender female:
+  css: "#gender-female"
+
+Im here to:
+  name: "tiw-phrase-id"
+
+City:
+  name: "city-search"
+
+Interested in element:
+  css: "#interested-in-wrap"
+
+###Validation error messages###
+
+Empty name error:
+  text: "Please enter your name"
+Empty gender error:
+  text: "Select your gender"
+Empty date of birth error:
+  text: "Select your date of birth"
+Empty city error:
+  text: "Please confirm your city"
+What you are here for error:
+  text: "Please select what you're here for"
+Name too short error:
+  text: "Name too short"
+Invalid name field error:
+  text: "Name field cannot contain numbers or symbols"
+Email in system error:
+  text: "Email already in system."
+13 years age restriction error:
+  text: "You must be at least 13 years old"
+18 years age restriction error:
+  text: "You must be at least 18 years old to use this service."
+Invalid cell phone error:
+  text: "Please enter a valid cell phone number."
+
+#----------Forget password page elements--------------#
+User:
+  css: "#username"
+
+Get password:
+  css: "#get-password-button"
+
+Cancel:
+  css: "#cancel-button"
+
+Unrecognized details error:
+  text: "Sorry, your contact details have not been recognised"
+
+WEBAPP Error message container:
+  css: ".error-messages"
+
+#----------menu item elements--------------#
+
+Menu:
+  css: ".menu"
+
+Profile menu item:
+  css: "#own-profile-item a"
+
+People Nearby menu item:
+  css: "#people-nearby-item a"
+
+Encounters menu item:
+  css: "#encounters-item a"
+
+Photo Rating menu item:
+  css: "#photo-rating-item a"
+
+Your Connection:
+  css: ".menu-section"
+
+Messages menu item:
+  css: "#messages-item a"
+
+Matches menu item:
+  css: "#matches-item a"
+
+Profile visitors menu item:
+  css: "#visitors-item a"
+
+Favourites menu item:
+  css: "#favourites-item a"
+
+Settings menu item:
+  css: "#settings-item a"
+
+Spotlight section:
+  css: ".section-spotlight"
+
+Add me here button:
+  css: ".spotlight-button"
+
+#----------Spotlight intro page elements-------#
+Go!:
+  css: "#buy-button"
+
+#----------Encounters page elements-------#
+Yes button:
+  css: ".encounters-yes-button"
+
+No button:
+  css: ".encounters-no-button"
+
+Profile info button:
+  css: ".profile-info-button"
+
+Female profile button:
+  css: "#encounters-profile-button-female"
+
+Male profile button:
+  css: "#encounters-profile-button-male"
+
+Friends stats:
+  css: ".stat.friends"
+
+Interests stats:
+  css: ".stat.interests"
+
+
+
+
+#----------Filter screen elements--------------#
+
+Filter button:
+  css: ".filter-button"
+
+Save button:
+  css: ".header-save-button"
+
+Back button:
+  css: ".backButton"
+
+Make new friends radio:
+  css: "#tiw-radio-10001"
+
+Chat radio:
+  css: "#tiw-radio-10002"
+
+Date radio:
+  css: "#tiw-radio-10003"
+
+Want to meet boys:
+  css: "#want-to-meet-boys"
+
+Want to meet girls:
+  css: "#want-to-meet-girls"
+
+Range slider track:
+  css: ".range-slider-track"
+
+City search:
+  name: "Where"
+
